@@ -1,0 +1,80 @@
+h1{
+    color: blue;
+    font-size: 150%;
+    margin-bottom: -10px;
+}
+
+h2{
+    font-size: 125%;
+    margin-top: 20px;
+    margin-bottom: 10px
+}
+
+main h2.phead
+{
+    margin-top: 40px;
+}
+
+h3{
+    font-size: 115%;
+    margin-bottom: 10px;
+}
+
+cite{
+    color: blue;
+    float: right;
+    margin-top: -15px;
+    font-style: normal;
+    padding-bottom: .75em
+}
+
+main p.pcite{
+    color: blue;
+    float: right;
+    margin-top: -1px;
+    padding-bottom: 5px
+}
+
+blockquote{
+    clear: right;
+    margin-left: 0px;
+    margin-top: -10px;
+    margin-bottom: 0px;
+    margin-right: 0px
+}
+
+img{
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 3.5px;
+}
+
+ul {
+    padding-left: 18px;
+    margin-top: -5px
+}
+
+html{
+    background-color: yellow;
+}
+
+main{
+    padding: 20px;
+}
+
+footer{
+    border-top: 3px solid blue;
+    margin: 12px;
+    text-align: center;
+    font-size: 90%;
+    font-weight: bold
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 650px;
+    margin: auto;
+    border: 12px double blue;
+    background-color: white;
+}
