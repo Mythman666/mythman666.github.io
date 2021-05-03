@@ -1,0 +1,121 @@
+html{
+    margin: auto;
+    width: 1500px;
+    position: relative;
+}
+
+body{
+    font-family: Helvetica, sans-serif;
+	border: 1px solid black;
+	box-shadow: 3px 15px 18px 10px black;
+}
+
+main{
+    padding: 30px;
+    height: 760px;
+    background-color: forestgreen;
+}
+
+.dealer{
+    display: block;
+    height: 350px;
+    width: 1482px;
+    margin-left: -30px;
+    border-bottom: 3px solid black;
+}
+
+.player{
+    display: block;
+    height: 350px;
+    width: 1482px;
+    margin-left: -30px;
+}
+
+.dealer_cards, .player_cards{
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px 40px 10px 10px;
+    color: grey;
+    float: left;
+}
+
+
+#nav_bar ul {
+	list-style-type: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+#nav_bar ul li{
+	float: left;
+	padding: 0;}
+
+#nav_bar ul li a{
+	display: block;
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	padding: 0.5em 0;
+	font-size: 90%;
+	width: 296.4px;
+	text-align: center;
+	font-weight: 200;
+}
+
+#nav_bar ul li a.home{
+	color: #FFA500;
+}
+
+#nav_bar ul li a:hover, #nav_bar ul li a:focus {
+	background-color: gray;
+}
+
+
+
+
+.result{
+    background-color: black;
+    height: 60px;
+    width: 500px;
+    margin: auto;
+    bottom: 140px;
+    border-radius: 4px;
+    -moz-box-shadow: 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 25px rgba(0,0,0,.7);
+}
+
+.result p{
+    padding-top: 5px;
+    text-align: center;
+    color: yellow;
+    font-weight: 700;
+    font-family: ;
+    font-size: 1.2em;
+}
+
+footer{
+    height: 160px;
+	font-size: 90%;
+	text-align:center;
+	border-top: 2px solid black;
+	padding: 0.5em 1em;
+    margin-top: -70px;
+	line-height: 1px;
+	clear:left;
+    font-weight: bold;
+	background-color: darkslateblue;
+}
+
+footer input{
+    background-color: aqua;
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    margin-top: 30px;
+}
+
+
+footer input:hover{
+	background-color: red;
+}
