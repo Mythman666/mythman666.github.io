@@ -1,7 +1,8 @@
 $(document).ready(function() {
     $('#deal').click(function() {
+    	$('li').remove();
     	$('.result p').remove();
-    	$('.dealer_cards').remove();
+    	$('.score h1').remove();
         playGame();
     });
 
@@ -10,11 +11,16 @@ $(document).ready(function() {
 		playerHand.hitMe("p");
 		result = firstResultCheck();
 		inputUserScore(result);
+		if(isNumeric(result)){
+			viewConsole();
+		} else {
+			hideConsole();
+			return;
+		}
     });
 
 
     $('#stand').click(function() {
-        alert = ("asdasd");
     	while(dealerHand.score() < 17){
     		countingDealersCards = 0;
     		dealerHand.hitMe("b");
@@ -23,15 +29,15 @@ $(document).ready(function() {
 		$('.dealers_cards li').remove();
 		revealDealerHand(dealerHand);
 		inputUserScore(result);
-        alert = ("asdasd");
+		hideConsole();
 		return;
     });
 });
 
 function cardFace(suit, figure){
 	suits = {1: "C", 2: "D", 3: "H", 4: "S"};
-	points = {1: "A", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "10", 11: "J", 12: "Q", 13: "K"};
-	var c = points[figure] + suits[suit];
+	figures = {1: "A", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6", 7: "7", 8: "8", 9: "9", 10: "10", 11: "J", 12: "Q", 13: "K"};
+	var c = figures[figure] + suits[suit] + ".png";
 	return c;
 }
 
@@ -53,11 +59,10 @@ function deckChecker(){
 	var array = new deck();
 	var array = array.create();
 	for(i = 0; i < 52; i++){
-	  console.log(array[i].getNumber() + array[i].getSuit());
+	  console.log(array[i].getNumber() +array[i].getSuit());
 	}
 }
 
-//Deck suffling
 function shuffle(a) {
     for (let i = a.length; i; i--) {
         let j = Math.floor(Math.random() * i);
@@ -105,7 +110,7 @@ var deal = function(whos){
 		$('.dealers_cards').css("height", "");
 		$('.dealers_cards ul').prepend('<li><a href="#"><img src="../cards/' + cardFace(newCard.getSuit(), newCard.getNumber()) + '" /></a></li>');
 	} else if(whos == "b" && countingDealersCards == 2){
-		$('.dealers_cards ul').prepend('<li><a href="#"><img src="../cards/back.jpg" /></a></li>');
+		$('.dealers_cards ul').prepend('<li><a href="#"><img src="../cards/blue_back.png" /></a></li>');
 	}
 	return newCard;
 };
@@ -141,7 +146,7 @@ function Hand(whos, howManyCards){
 	this.printHand = function(){
 		var string = "";
 		for(i=0;i<cardArray.length;i++){
-			string = string + cardArray[i].getNumber() + " of suit "+cardArray[i].getSuit()+", ";
+			string = string + cardArray[i].getNumber() + cardArray[i].getSuit()+", ";
 		}
 		return string;
 	};
@@ -152,27 +157,27 @@ function Hand(whos, howManyCards){
 }
 
 var finalResultCheck = function(){
-	var pS = player.score();
+	var pS = playerHand.score();
 	var dS = dealerHand.score();
 	if(pS > 21){
       	if( dS >21){
           	return "Tide";
       	}
       	else{
-      	return "Bust";
+      	return "YOU LOSE";
       	}
   	}
   	else if(dS>21){
-    	return "Win";
+    	return "YOU WIN";
  	}
   	else if(pS>dS){
-      	return "Win";
+      	return "YOU WIN";
   	}
   	else if(pS===dS){
       	return "Tide";
   	}
   	else{
-      	return "Lose";
+      	return "YOU LOSE";
   	}
  };
 
@@ -189,14 +194,14 @@ var finalResultCheck = function(){
           	return "TideOver";
       	}
       	else{
-      	return "Bust";
+      	return "YOU LOSE";
       	}
   	}
   	else if(dS>21){
-    	return "Win";
+    	return " YOU WIN";
  	}
  	else if(pS===21){
- 		return "BJ wins";
+ 		return "BJ";
  	}
   	else{
       	return pS;
@@ -219,6 +224,14 @@ var phaseOne = function(){
 
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
+}
+
+var viewConsole = function(){
+	$('.gameConsole').css("visibility", "");
+}
+
+var hideConsole = function(){
+	$('.gameConsole').css("visibility", "hidden");
 }
 
 var playGame = function(){
