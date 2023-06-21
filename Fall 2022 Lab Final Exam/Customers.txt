@@ -1,0 +1,4 @@
+Mickey Mouse|mmouse@gmail.com|8764339087
+Donald Duck|dduck@hotmail.com|4783254125
+Goofy Dog|gdog@mail.com|5548743256
+Minnie Mouse|minnie.mouse@gmail.com|8764335412

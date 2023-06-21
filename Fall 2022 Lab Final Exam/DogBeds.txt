@@ -1,0 +1,10 @@
+Memory Foam|$75.00|10
+Orthopedic|$89.00|25
+Pet sofa|$150.00|10
+Donut Style|$25.00|50
+Cave Style|$65.00|15
+Pillow|$40.00|100
+Heated|$200.00|5
+Outdoor Pet Cot|$70.00|12
+Pet Cot with Canopy|$250.00|5
+Blankets|$15.00|100
